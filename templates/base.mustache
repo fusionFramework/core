@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset=utf-8>
+	<title>{{title}} - {{site_name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{&css_files}}
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+				<a class="navbar-brand" href="{{#uri}}default{{/uri}}">{{site_name}}</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+	                <li><a href="{{#uri}}news{{/uri}}">News</a></li>
+	                {{#logged_in}}
+	                    <li><a href="{{#uri}}stores.index{{/uri}}">Stores</a></li>
+	                {{/logged_in}}
+	                <li><a href="{{#uri}}forum{{/uri}}">Forum</a></li>
+	            </ul>
+				<ul class="nav navbar-nav navbar-right">
+					{{#logged_in}}
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="player-drop">{{player.username}} <span class="caret"></span></a>
+						<ul class="dropdown-menu" aria-labelledby="player-drop">
+							<li><a tabindex="-1" href="{{#uri}}inventory.index{{/uri}}">Inventory</a></li>
+							<li><a tabindex="-1" href="{{#url}}user/settings{{/url}}">Settings</a></li>
+							{{#access_admin}}
+							<li class="divider"></li>
+							<li><a tabindex="-1" href="{{#url}}admin{{/url}}"><i class="fa fa-shield"></i> Admin</a></li>
+							{{/access_admin}}
+							<li class="divider"></li>
+							<li><a tabindex="-1" href="{{#url}}user/logout{{/url}}"><i class="fa fa-sign-out"></i> Log out</a></li>
+						</ul>
+					</li>
+					<li><a tabindex="0" href="#" class="noclick">{{player.points}}</a></li>
+					{{/logged_in}}
+					{{^logged_in}}
+					<li><a tabindex="-1" href="{{#url}}user/login{{/url}}">Login</a></li>
+					<li><a tabindex="-1" href="{{#url}}user/register{{/url}}">Register</a></li>
+					{{/logged_in}}
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+
+		{{&flash_messages}}
+		
+		{{>content}}
+
+	<div class="notifications bottom-right" id="notify-container"></div>
+		<hr>
+
+		<footer>
+			<p>{{&copyright}}</p>
+		</footer>
+	</div>
+	{{&js_files}}
+</body>
+</html>

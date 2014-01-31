@@ -1,0 +1,11 @@
+	<ul class="{{paginate.get_class}}">
+		{{#items}}
+			<li{{#current}} class="active"{{/current}}>
+
+				<a href="{{url}}" rel="{{url}}">
+					{{name}}
+				</a>
+
+			</li>
+		{{/items}}
+	</ul>

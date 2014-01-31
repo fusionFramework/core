@@ -1,0 +1,30 @@
+{
+	"name"       :"fusionFramework/core",
+	"description":"fusionFramework's core package",
+	"type"       :"fusionFramework",
+	"homepage"   :"https://github.com/fusionFramework/core",
+	"license"    :"MIT",
+	"authors"    :[
+		{
+			"name"    :"Maxim Kerstens",
+			"email"   :"maxim.kerstens@gmail.com",
+			"role"    :"Project maintainer"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://ktt-happydemon.rhcloud.com"
+		}
+	],
+	"require": {
+		"fusionFramework/app": "*",
+		"happydemon/arr": "1.*",
+		"happydemon/elements": "1.*",
+		"happydemon/txt": "1.*",
+		"happydemon/req": "*",
+		"vheissu/kohana-plugin-system": "1.*",
+		"zombor/kostache": "4.0.2",
+		"swiftmailer/swiftmailer": "v5.0.2"
+	}
+}
