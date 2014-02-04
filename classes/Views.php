@@ -68,6 +68,11 @@ abstract class Views {
 		return Fusion::$user != null;
 	}
 
+	public function currency()
+	{
+		return Fusion::$config['currency']['plural'];
+	}
+
 	/**
 	 * Get the logged in user's information.
 	 * @return  array

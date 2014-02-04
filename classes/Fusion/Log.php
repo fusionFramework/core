@@ -30,7 +30,7 @@ class Fusion_Log {
 		}
 
 		//add the username to the params
-		$params['username'] = $user->username;
+		$params[':username'] = $user->username;
 
 		if(isset($params['alias_id']))
 		{
