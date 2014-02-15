@@ -6,7 +6,7 @@ return array(
 	// The set that is loaded on every page of the site
 	'site' => array(
 		'set'  => array('jquery', 'bootstrap'),
-		'css'   => 'http://netdna.bootstrapcdn.com/bootswatch/3.0.0/cerulean/bootstrap.min.css'
+		'css'   => 'http://bootswatch.com/lumen/bootstrap.css'
 	),
 	'jquery' => array(
 		'js'    => 'jquery-2.0.3.min.js'
